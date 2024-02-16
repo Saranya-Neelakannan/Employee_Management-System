@@ -2,18 +2,21 @@ package com.company.employee.service;
 
 import java.util.LinkedList;
 
+import com.company.employee.data.Address;
 import com.company.employee.data.Employee;
 
 
 
 public class Add{
 	static LinkedList<Employee> employee;
+	static Address ad1=new Address(1,"Street1","TamilNadu","Salem","India",636401);
+	static Address ad2=new Address(2,"Street2","TamilNadu","Theni","India",600231);
+	static Address ad3=new Address(3,"Street3","TamilNadu","Tanjore","India",637861);
 	static {
 		employee = new LinkedList<>();
-		employee.add(new Employee(1,"saranya",25,50000,"Onebill","Salesforce"));
-		employee.add(new Employee(2,"sudhan",25,40000,"Onebill","Amazon"));
-		employee.add(new Employee(3,"madhu",25,40000,"Onebill","Tekion"));
+		employee.add(new Employee(1,"saranya",25,50000,"Onebill","Salesforce",ad1));
+		employee.add(new Employee(2,"sudhan",25,40000,"Onebill","Amazon",ad2));
+		employee.add(new Employee(3,"madhu",25,40000,"Onebill","Tekion",ad3));
 		
 	}
 }
-	
