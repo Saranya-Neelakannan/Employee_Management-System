@@ -1,7 +1,6 @@
 package com.company.employee.data;
 
 public class Address {
-	
 	public int DoorNumber;
 	public String street;
 	public String state;
@@ -16,7 +15,5 @@ public class Address {
 		this.city = city;
 		this.country = country;
 		this.pincode = pincode;
-	}
-	
-
+}
 }
