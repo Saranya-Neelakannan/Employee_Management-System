@@ -7,7 +7,7 @@ public class Admin {
 	public int password;
 	public String role;
 	
-//	public ArrayList<Admin> admin = new ArrayList<>();
+
 
 	public Admin(int adminId, String adminName, int password, String role) {
 		
@@ -15,7 +15,7 @@ public class Admin {
 		this.adminName = adminName;
 		this.password = password;
 		this.role = role;
-//	
+
 	}
 
 }
