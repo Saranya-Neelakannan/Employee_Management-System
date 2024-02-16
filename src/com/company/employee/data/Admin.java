@@ -7,7 +7,7 @@ public class Admin {
 	public int password;
 	public String role;
 	
-
+	
 
 	public Admin(int adminId, String adminName, int password, String role) {
 		
