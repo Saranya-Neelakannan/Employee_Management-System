@@ -105,8 +105,61 @@ public class Update {
 						updatedPostalCode(empid,updatedPostalCode);
 					}
 		}
+		}
 		
 	}
 
-	
+	private void updatedPostalCode(int empid, int updatedPostalCode) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void updatedCountry(int empid, String updatedCountry) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void updatedState(int empid, String updatedState) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void updatedCity(int empid, String updatedState) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void updatedStreet(int empid, String updatedStreet) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void updatedDoorNo(int empid, int updatedDoorNo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void updatedAge(int empid, int updatedAge) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void updatedCurrentCompany(int empid, String updatedCurrentCompany) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void updatedSalary(int empid, int updatedSalary) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void updatedPrevCompany(int empid, String updatedPrevCompany) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private  boolean checkIfUserExists(int id) {
+		return false;		
+	}
 }

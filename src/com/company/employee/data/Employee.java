@@ -9,10 +9,13 @@ public class Employee {
 	public int salary;
 	public String currentCompany;
 	public String prevCompany;
+	public Address address;
 	
+
 	
-	
-	public Employee(int employeeId,String name ,int age, int salary, String currentCompany, String prevCompany) {
+
+	public Employee(int employeeId,String name ,int age, int salary, String currentCompany, String prevCompany,Address address) {
+
 		
 		this.employeeId = employeeId;
 		this.name = name;
@@ -20,6 +23,7 @@ public class Employee {
 		this.salary = salary;
 		this.currentCompany = currentCompany;
 		this.prevCompany = prevCompany;
+		this.address=address;
 	}
 	
 	
