@@ -3,7 +3,7 @@ package com.company.employee.data;
 public class Employee {
 
 
-	public int  EmployeeId;
+	public int  employeeId;
 	public String name;
 	public int age;
 	public int salary;
@@ -13,7 +13,7 @@ public class Employee {
 	
 	public Employee(int employeeId,String name ,int age, int salary, String currentCompany, String prevCompany) {
 		
-		EmployeeId = employeeId;
+		this.employeeId = employeeId;
 		this.name = name;
 		this.age = age;
 		this.salary = salary;
