@@ -15,7 +15,7 @@ public class View {
 			return null;
 	}
 	
-	public LinkedList<Employee> viewAllEmployee(){
+	public void viewAllEmployee(){
 		for(Employee e:Initialize.employee) {
 			System.out.println(e);
 			
