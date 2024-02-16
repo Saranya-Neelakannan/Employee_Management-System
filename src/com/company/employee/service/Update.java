@@ -38,7 +38,6 @@ public class Update {
 				int detailsChoice=sc.nextInt();
 				System.out.println("enter the id");
 				int empid=sc.nextInt();
-				int updateid=sc.nextInt();
 				
 				if(detailsChoice==1) {
 		
@@ -70,17 +69,44 @@ public class Update {
 					}
 					
 				}
-				
-				
-
-				
-				
-			
+				if(detailsChoice==2) {
+					System.out.println("what you need to update 1.DoorNo , 2.Street , 3.City , 4.State , 5.Country , 6.PinCode");
+					int  AddressDetails = sc.nextInt();
+					if(AddressDetails==1) {
+						System.out.println("Enter ther updated Doorno");
+						int updatedDoorNo=sc.nextInt();
+						updatedDoorNo(empid,updatedDoorNo);
+						
+					}
+					if(AddressDetails==2) {
+						System.out.println("Enter ther updated Street");
+						String updatedStreet=sc.next();
+						updatedStreet(empid,updatedStreet);
+					}
+					if (AddressDetails==3) {
+						System.out.println("Enter the updated City");
+						String updatedCity=sc.next();
+						updatedCity(empid,updatedCity);
+					}
+					if (AddressDetails==4) {
+						System.out.println("Enter the updated State");
+						String updatedState=sc.next();
+						updatedState(empid,updatedState);
+					}
+					
+					if (AddressDetails==5) {
+						System.out.println("Enter the updated Country");
+						String updatedCountry=sc.next();
+						updatedCountry(empid,updatedCountry);
+					}
+					if (AddressDetails==5) {
+						System.out.println("Enter the updated postal code");
+						int updatedPostalCode=sc.nextInt();
+						updatedPostalCode(empid,updatedPostalCode);
+					}
 		}
 		
 	}
 
-	private  boolean checkIfUserExists(int id) {
-		return false;		
-	}
+	
 }

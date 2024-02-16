@@ -11,6 +11,7 @@ public class Employee {
 	public String prevCompany;
 	
 	
+	
 	public Employee(int employeeId,String name ,int age, int salary, String currentCompany, String prevCompany) {
 		
 		this.employeeId = employeeId;
