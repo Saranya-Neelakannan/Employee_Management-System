@@ -5,6 +5,8 @@ import java.util.Scanner;
 import com.company.employee.data.Address;
 import com.company.employee.data.Employee;
 
+import UserNotFoundException.UserAlreadyExists;
+
 public class Update {
     Update(){
 
@@ -198,12 +200,18 @@ public class Update {
 
     }
 
-    private boolean checkIfUserExists(int id) {
+    private boolean checkIfUserExists (int id) {
         for (Employee e : Initialize.employee) {
+        	try {
             if (e.employeeId == id) {
-                return true;
+            	throw new UserAlreadyExists("User Already Exists");
             }
-        }
-        return false;
+        	}
+            catch(UserAlreadyExists u){
+            	System.out.println(u);
+            }
+        return true;
     }
+		return false;
+}
 }
