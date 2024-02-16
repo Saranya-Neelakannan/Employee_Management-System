@@ -147,7 +147,15 @@ public class Update {
         }
     }
 
-    private void updatedPostalCode(int empid, int updatedPostalCode) {
+    private void updatedState(int empid, String updatedState) {
+    	for(Employee e:Initialize.employee) {
+            if(empid==(e.employeeId)) {
+                e.address.state=updatedState;
+            }
+        }
+	}
+
+	private void updatedPostalCode(int empid, int updatedPostalCode) {
         for(Employee e:Initialize.employee) {
             if(empid==(e.employeeId)) {
                 e.address.pincode=updatedPostalCode;
@@ -156,47 +164,76 @@ public class Update {
     }
 
     private void updatedCountry(int empid, String updatedCountry) {
-        // TODO Auto-generated method stub
+    	for(Employee e:Initialize.employee) {
+            if(empid==(e.employeeId)) {
+                e.address.country=updatedCountry;
+            }
+        }
 
     }
 
-    private void updatedState(int empid, String updatedState) {
-        // TODO Auto-generated method stub
-
-    }
-
+   
     private void updatedCity(int empid, String updatedState) {
-        // TODO Auto-generated method stub
+    	for(Employee e:Initialize.employee) {
+            if(empid==(e.employeeId)) {
+                e.address.state=updatedState;
+            }
+        }
 
     }
 
     private void updatedStreet(int empid, String updatedStreet) {
-        // TODO Auto-generated method stub
+    	for(Employee e:Initialize.employee) {
+            if(empid==(e.employeeId)) {
+                e.address.street=updatedStreet;
+            }
+        }
+
 
     }
 
     private void updatedDoorNo(int empid, int updatedDoorNo) {
-        // TODO Auto-generated method stub
+    	for(Employee e:Initialize.employee) {
+            if(empid==(e.employeeId)) {
+                e.address.doorNumber=updatedDoorNo;
+            }
+        }
 
     }
 
     private void updatedAge(int empid, int updatedAge) {
-        // TODO Auto-generated method stub
+    	for(Employee e:Initialize.employee) {
+            if(empid==(e.employeeId)) {
+                e.age=updatedAge;
+            }
+        }
 
     }
 
     private void updatedCurrentCompany(int empid, String updatedCurrentCompany) {
-        // TODO Auto-generated method stub
+    	for(Employee e:Initialize.employee) {
+            if(empid==(e.employeeId)) {
+                e.currentCompany=updatedCurrentCompany;
+            }
+        }
 
     }
 
     private void updatedSalary(int empid, int updatedSalary) {
-        // TODO Auto-generated method stub
+    	for(Employee e:Initialize.employee) {
+            if(empid==(e.employeeId)) {
+                e.salary=updatedSalary;
+            }
+        }
 
     }
 
     private void updatedPrevCompany(int empid, String updatedPrevCompany) {
-        // TODO Auto-generated method stub
+    	for(Employee e:Initialize.employee) {
+            if(empid==(e.employeeId)) {
+                e.prevCompany=updatedPrevCompany;
+            }
+        }
 
     }
 
