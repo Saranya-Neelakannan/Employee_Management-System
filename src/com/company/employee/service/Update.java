@@ -182,6 +182,8 @@ public class Update {
     else if(validAdmin &&(adminId==2 || adminId==3) )
     {
     	View viewoption = new View();
+    	char option='y';
+    	do {
     	System.out.println("1.search 2.view");
     	int choice = sc.nextInt();
     	
@@ -197,6 +199,9 @@ public class Update {
         	break;
     	}
     	
+    	System.out.println("Do you want to continue y/Y n/N");
+    	option=sc.next().charAt(0);
+    	}while(option=='y' || option=='Y');
     		
     }
     else {
