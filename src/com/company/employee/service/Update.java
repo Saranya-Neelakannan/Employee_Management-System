@@ -7,6 +7,8 @@ import java.util.Scanner;
 import com.company.employee.data.Address;
 import com.company.employee.data.Admin;
 import com.company.employee.data.Employee;
+import com.company.employee.exceptions.UnauthorizedAccess;
+import com.company.employee.exceptions.UserAlreadyExists;
 
 public class Update {
     public Update(){
@@ -24,7 +26,7 @@ public class Update {
 
     	    	
     	
-    	if(validAdmin) {
+    	if(validAdmin && adminId==1) {
        	do {
         System.out.println("Enter choice 1.Add employee 2.Update Employee 3.Search User 4.View All User 5.Sort");
         int choice=sc.nextInt();
@@ -171,16 +173,41 @@ public class Update {
 
             default:
                 System.out.println("Invalid choice!");
+          
         }
         System.out.println("Do you want to continue y/Y n/N");
         execute=sc.next().charAt(0);
     }while(execute=='y' || execute=='Y');
     }
-    else
+    else if(validAdmin &&(adminId==2 || adminId==3) )
     {
-    	System.out.println("Invalid Credentails");
+    	View viewoption = new View();
+    	System.out.println("1.search 2.view");
+    	int choice = sc.nextInt();
+    	
+    	
+    	switch(choice) {
+    	case 1:
+    		System.out.println("Enter EmpId to Search");
+            int empId=sc.nextInt();
+            viewoption.searchEmployee(empId);
+            break;
+    	case 2:
+    		viewoption.viewAllEmployee();
+        	break;
+    	}
+    	
+    		
     }
+    else {
+    
+            // Throw an object of user defined exception
+            throw new UnauthorizedAccess("Not Valid Credentials");
+  
+
+        }
     }
+    
 
     private void updatedState(int empid, String updatedState) {
     	for(Employee e:Initialize.employee) {
@@ -275,6 +302,7 @@ public class Update {
     private boolean checkIfUserExists (int id) {
         for (Employee e : Initialize.employee) {
              if (e.employeeId == id) {
+            	 throw new UserAlreadyExists("User you are trying to add Already exists");
             	return true;
             }
         	
@@ -284,11 +312,12 @@ public class Update {
 }
     public boolean checkIfAdminExists(int id,String password) {
     	for(Admin admin:Initialize.adminList) {
-    		if(admin.AdminId == id  && admin.password == password) {
+    		if(admin.AdminId ==id  && admin.password.equals(password)) {
+
     			return true;
     		}
     	}
-    	return false;
+    	return false ;
 
     }
     public LinkedList<Employee> sortEmployee()

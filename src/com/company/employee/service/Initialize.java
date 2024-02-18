@@ -15,18 +15,34 @@ public class Initialize{
 	static Address ad3=new Address(3,"Street3","TamilNadu","Tanjore","India",637861);
 	static {
 		employee = new LinkedList<>();
-		employee.add(new Employee(1,"saranya",25,50000,"Onebill","Salesforce",ad1));
-		employee.add(new Employee(2,"sudhan",25,40000,"Onebill","Amazon",ad2));
-		employee.add(new Employee(3,"madhu",25,40000,"Onebill","Tekion",ad3));
+		employee.add(new Employee(10,"saranya",25,50000,"Onebill","Salesforce",ad1));
+		employee.add(new Employee(11,"sudhan",25,40000,"Onebill","Amazon",ad2));
+		employee.add(new Employee(12,"madhu",25,40000,"Onebill","Tekion",ad3));
 		
 	}
 	
 	static LinkedList<Admin> adminList;
 	static {
 		adminList = new LinkedList<>();
-		adminList.add(new Admin(1,"john","john","ADMINALL"));
+
+		adminList.add(new Admin(1,"john","1234","ADMINALL"));
+	
+
 		adminList.add(new Admin(2,"vijay","5678","ADMINVIEW"));
 		adminList.add(new Admin(3,"suriya","7890","ADMINVIEW"));
 		
 	}
+	
+public boolean checkIfAdminExists(int id) {
+    	
+    	
+    	for(Admin admin: adminList) {
+    		if(admin.AdminId ==id) {
+    			return true;
+    		}
+    	}
+    	return false;
+
+    }
+	
 }

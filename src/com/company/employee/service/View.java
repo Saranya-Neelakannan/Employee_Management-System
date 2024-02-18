@@ -5,14 +5,16 @@ import java.util.LinkedList;
 import com.company.employee.data.Employee;
 
 public class View {
-	public Employee searchEmployee(int empId){
+	public void searchEmployee(int empId){
 		for(Employee e:Initialize.employee) {
 			if(empId==(e.employeeId)) {
-				return e;
+				System.out.println(e);
+				return;
 			}
 		}
-		
-			return null;
+ 
+			System.out.println("Employee not found");
+			
 	}
 	
 	public void viewAllEmployee(){

@@ -11,7 +11,7 @@ public class Admin {
 
 	public Admin(int adminId, String adminName, String password, String role) {
 		
-		AdminId = adminId;
+		this.AdminId = adminId;
 		this.adminName = adminName;
 		this.password = password;
 		this.role = role;
