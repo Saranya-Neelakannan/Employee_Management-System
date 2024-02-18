@@ -24,9 +24,9 @@ public class Initialize{
 	static LinkedList<Admin> adminList;
 	static {
 		adminList = new LinkedList<>();
-		adminList.add(new Admin(1,"john",1234,"ADMINALL"));
-		adminList.add(new Admin(2,"vijay",5678,"ADMINVIEW"));
-		adminList.add(new Admin(3,"suriya",7890,"ADMINVIEW"));
+		adminList.add(new Admin(1,"john","john","ADMINALL"));
+		adminList.add(new Admin(2,"vijay","5678","ADMINVIEW"));
+		adminList.add(new Admin(3,"suriya","7890","ADMINVIEW"));
 		
 	}
 }

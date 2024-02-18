@@ -4,12 +4,12 @@ public class Admin {
 	
 	public int AdminId;
 	public String adminName;
-	public int password;
+	public String password;
 	public String role;
 	
 	
 
-	public Admin(int adminId, String adminName, int password, String role) {
+	public Admin(int adminId, String adminName, String password, String role) {
 		
 		AdminId = adminId;
 		this.adminName = adminName;
