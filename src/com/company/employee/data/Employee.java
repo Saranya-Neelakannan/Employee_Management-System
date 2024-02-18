@@ -25,6 +25,18 @@ public class Employee {
 		this.prevCompany = prevCompany;
 		this.address=address;
 	}
-	
+	@Override
+	public String toString() {
+		return "Employee [employeeId=" + employeeId + ", name=" + name + ", age=" + age + ", salary=" + salary
+				+ ", currentCompany=" + currentCompany + ", prevCompany=" + prevCompany + ", address=" + address + "]";
+	}
+
+	public int getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
+	}
+
 	
 }

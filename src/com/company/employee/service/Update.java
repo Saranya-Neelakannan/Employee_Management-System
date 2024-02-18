@@ -1,23 +1,38 @@
 package com.company.employee.service;
 
+import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 import com.company.employee.data.Address;
+import com.company.employee.data.Admin;
 import com.company.employee.data.Employee;
 
-import UserNotFoundException.UserAlreadyExists;
-
 public class Update {
-    Update(){
-
+    public Update(){
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter choice 1.Add employee 2.Update Employee 3.Search User 4.View All User");
+        
+       
+
+    	System.out.println("Enter your login credentials:");
+    	System.out.println("Enter id and password:");
+    	int adminId=sc.nextInt();
+    	sc.nextLine();
+    	String password=sc.nextLine();
+    	boolean validAdmin=checkIfAdminExists(adminId,password);
+    	char execute='y';
+
+    	    	
+    	
+    	if(validAdmin) {
+       	do {
+        System.out.println("Enter choice 1.Add employee 2.Update Employee 3.Search User 4.View All User 5.Sort");
         int choice=sc.nextInt();
         View view =new View();
 
         switch(choice) {
             case 1://ADD
-                System.out.println("Enter the Id employee:");
+                System.out.println("Enter the employeeId:");
                 int id=sc.nextInt();
                 if(!checkIfUserExists(id)) {
                     System.out.println("Enter the basic details of employee:");
@@ -49,6 +64,8 @@ public class Update {
 
                     Address ad=new Address(doorNumber,street,state,city,country,pincode);
                     Employee e=new Employee(id,name,age,salary,curr_comp,prev_comp,ad);
+                    
+                    System.out.println("Employee Added");
 
                     Initialize.employee.add(e);
                 } else {
@@ -57,7 +74,7 @@ public class Update {
                 break;
                 
             case 2://Update
-                System.out.println("Whether you need to update 1.Basic details or 2.Address Details 3.Search Employee 4.View All Employee");
+                System.out.println("Whether you need to update 1.Basic details or 2.Address Details");
                 int detailsChoice=sc.nextInt();
                 System.out.println("enter the id");
                 int empid=sc.nextInt();
@@ -141,10 +158,28 @@ public class Update {
                 int empId=sc.nextInt();
                 view.searchEmployee(empId);
                 break;
+                
+            case 4:
+            	view.viewAllEmployee();
+            	break;
+            case 5:
+            	LinkedList<Employee> empList=sortEmployee();
+            	for(Employee emp:empList) {
+            		System.out.println(emp);
+            	}
+            	break;
 
             default:
                 System.out.println("Invalid choice!");
         }
+        System.out.println("Do you want to continue y/Y n/N");
+        execute=sc.next().charAt(0);
+    }while(execute=='y' || execute=='Y');
+    }
+    else
+    {
+    	System.out.println("Invalid Credentails");
+    }
     }
 
     private void updatedState(int empid, String updatedState) {
@@ -239,16 +274,27 @@ public class Update {
 
     private boolean checkIfUserExists (int id) {
         for (Employee e : Initialize.employee) {
-        	try {
-            if (e.employeeId == id) {
-            	throw new UserAlreadyExists("User Already Exists");
+             if (e.employeeId == id) {
+            	return true;
             }
-        	}
-            catch(UserAlreadyExists u){
-            	System.out.println(u);
-            }
-        return true;
+        	
+        
     }
 		return false;
 }
+    public boolean checkIfAdminExists(int id,String password) {
+    	for(Admin admin:Initialize.adminList) {
+    		if(admin.AdminId ==id  && admin.password.equals(password)) {
+    			return true;
+    		}
+    	}
+    	return false;
+
+    }
+    public LinkedList<Employee> sortEmployee()
+    {
+    	Comparator<Employee> sortById =Comparator.comparing(Employee::getEmployeeId );
+    	Initialize.employee.sort(sortById);
+    	return new LinkedList<>(Initialize.employee);
+    	}
 }
