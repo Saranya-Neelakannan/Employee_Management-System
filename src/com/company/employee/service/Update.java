@@ -24,7 +24,6 @@ public class Update {
     	boolean validAdmin=checkIfAdminExists(adminId,password);
     	Admin admin = Initialize.returnAdmin(adminId);
     	String role = admin.getRole();
-    	System.out.println(role);
     	char execute='y';
     	if(validAdmin && role.equals("ADMINALL")) {
        	do {
@@ -211,7 +210,8 @@ public class Update {
   
 
         }
-    }
+    	System.out.println("Program Exited");
+    	}
     
 
     private void updatedState(int empid, String updatedState) {
@@ -308,11 +308,11 @@ public class Update {
         for (Employee e : Initialize.employee) {
              if (e.employeeId == id) {
             	 throw new UserAlreadyExists("User you are trying to add Already exists");
-<<<<<<< HEAD
+
             
-=======
+
 //            	return true;
->>>>>>> 8ccbce8bb802ba9b137a791e46cab1f7b62cf6b9
+
             }
         
     }

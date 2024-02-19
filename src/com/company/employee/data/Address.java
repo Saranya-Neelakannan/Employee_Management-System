@@ -19,4 +19,11 @@ public class Address {
 		this.country = country;
 		this.pincode = pincode;
 }
+
+
+	@Override
+	public String toString() {
+		return "Address [doorNumber=" + doorNumber + ", street=" + street + ", state=" + state + ", city=" + city
+				+ ", country=" + country + ", pincode=" + pincode + "]";
+	}
 }
