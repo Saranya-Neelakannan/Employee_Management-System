@@ -26,8 +26,6 @@ public class Initialize{
 		adminList = new LinkedList<>();
 
 		adminList.add(new Admin(1,"john","1234","ADMINALL"));
-	
-
 		adminList.add(new Admin(2,"vijay","5678","ADMINVIEW"));
 		adminList.add(new Admin(3,"suriya","7890","ADMINVIEW"));
 		
@@ -44,5 +42,14 @@ public boolean checkIfAdminExists(int id) {
     	return false;
 
     }
+
+public static Admin returnAdmin(int id) {
+	
+	for(Admin admin : adminList) {
+		if(admin.AdminId==id)
+			return admin;
+	}
+	return null;
+}
 	
 }
