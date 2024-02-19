@@ -308,9 +308,8 @@ public class Update {
         for (Employee e : Initialize.employee) {
              if (e.employeeId == id) {
             	 throw new UserAlreadyExists("User you are trying to add Already exists");
-            	return true;
+            
             }
-        	
         
     }
 		return false;
