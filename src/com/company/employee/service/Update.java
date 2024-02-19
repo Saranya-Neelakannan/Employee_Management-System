@@ -16,17 +16,17 @@ public class Update {
         
        
 
-    	System.out.println("Enter your login credentials:");
-    	System.out.println("Enter id and password:");
+    	System.out.println("Enter your login credentials : ");
+    	System.out.println("Enter id and password : ");
     	int adminId=sc.nextInt();
     	sc.nextLine();
     	String password=sc.nextLine();
     	boolean validAdmin=checkIfAdminExists(adminId,password);
+    	Admin admin = Initialize.returnAdmin(adminId);
+    	String role = admin.getRole();
+    	System.out.println(role);
     	char execute='y';
-
-    	    	
-    	
-    	if(validAdmin && adminId==1) {
+    	if(validAdmin && role.equals("ADMINALL")) {
        	do {
         System.out.println("Enter choice 1.Add employee 2.Update Employee 3.Search User 4.View All User 5.Sort");
         int choice=sc.nextInt();
@@ -179,7 +179,7 @@ public class Update {
         execute=sc.next().charAt(0);
     }while(execute=='y' || execute=='Y');
     }
-    else if(validAdmin &&(adminId==2 || adminId==3) )
+    else if(validAdmin && role.equals("ADMINVIEW") )
     {
     	View viewoption = new View();
     	char option='y';
@@ -308,7 +308,11 @@ public class Update {
         for (Employee e : Initialize.employee) {
              if (e.employeeId == id) {
             	 throw new UserAlreadyExists("User you are trying to add Already exists");
+<<<<<<< HEAD
             
+=======
+//            	return true;
+>>>>>>> 8ccbce8bb802ba9b137a791e46cab1f7b62cf6b9
             }
         
     }
